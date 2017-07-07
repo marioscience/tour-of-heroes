@@ -16,8 +16,17 @@ import { AppRoutingModule } from "./app-routing.module";
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent, HeroDetailComponent, HeroesComponent, DashboardComponent ],
-  providers:    [ HeroService ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent
+  ],
+  providers:    [
+    HeroService
+  ],
+  bootstrap:    [
+    AppComponent
+  ]
 })
 export class AppModule { }
