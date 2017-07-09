@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Hero } from "./hero";
-import { HeroService } from "./hero.service";
+import { Hero } from "../hero";
+import { HeroService } from "../services/hero.service";
 import { OnInit } from "@angular/core";
 
 import { Router } from "@angular/router";
@@ -33,6 +33,15 @@ export class HeroesComponent implements OnInit  {
   }
 
   viewDetail(): void {
-    this.router.navigate(["/detail", this.selectedHero.id]);
+    this.router.navigate(["/detail", +this.selectedHero.id]);
+  }
+
+  deleteHero(hero: Hero): void {
+    this.heroService
+      .deleteHero(hero.id)
+      .then(() => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+        if (this.selectedHero === hero) { this.selectedHero = null }
+      });
   }
 }

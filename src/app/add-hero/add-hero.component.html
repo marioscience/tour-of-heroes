@@ -1,0 +1,5 @@
+<h3>Hero Name: </h3>
+<input name="heroid" placeholder="Hero ID" #heroId /> <br>
+<input name="heroname" placeholder="Hero Name" #heroName /><br>
+<h1>{{ hero }}</h1>
+<button (click)="save(heroId.value, heroName.value)">Add</button>
